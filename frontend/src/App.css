@@ -1,0 +1,261 @@
+/* App Planner & PRD Manager Styles */
+
+/* Main container */
+.App {
+  min-height: 100vh;
+  background-color: #09090b;
+}
+
+/* Header styling */
+.app-header {
+  background-color: #000000;
+  border-bottom: 1px solid #27272a;
+}
+
+/* Sidebar styling */
+.app-sidebar {
+  background-color: #020202;
+  border-right: 1px solid #27272a;
+}
+
+/* Card styling */
+.app-card {
+  background-color: #121212;
+  border: 1px solid #27272a;
+  transition: all 0.2s ease;
+}
+
+.app-card:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Block item styling */
+.block-item {
+  border-left: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.block-item:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.block-item.active {
+  border-left-color: #f97316;
+  background-color: rgba(249, 115, 22, 0.05);
+}
+
+/* Tree line connector */
+.tree-line {
+  position: relative;
+}
+
+.tree-line::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: #27272a;
+}
+
+/* Drag handle */
+.drag-handle {
+  cursor: grab;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.block-item:hover .drag-handle {
+  opacity: 1;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+/* Status badge variants */
+.status-not_started {
+  background-color: rgba(113, 113, 122, 0.1);
+  border-color: #3f3f46;
+  color: #71717a;
+}
+
+.status-in_progress {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: #1e3a8a;
+  color: #60a5fa;
+}
+
+.status-blocked {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: #7f1d1d;
+  color: #f87171;
+}
+
+.status-needs_review {
+  background-color: rgba(245, 158, 11, 0.1);
+  border-color: #78350f;
+  color: #fbbf24;
+}
+
+.status-done {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-color: #064e3b;
+  color: #34d399;
+}
+
+.status-deprecated {
+  background-color: rgba(113, 113, 122, 0.1);
+  border-color: #27272a;
+  color: #52525b;
+  text-decoration: line-through;
+}
+
+/* Priority badge variants */
+.priority-must {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: #7f1d1d;
+  color: #f87171;
+}
+
+.priority-should {
+  background-color: rgba(249, 115, 22, 0.1);
+  border-color: #7c2d12;
+  color: #fb923c;
+}
+
+.priority-nice {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: #1e3a8a;
+  color: #60a5fa;
+}
+
+.priority-optional {
+  background-color: rgba(107, 114, 128, 0.1);
+  border-color: #374151;
+  color: #9ca3af;
+}
+
+/* Input focus states */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+/* Button hover states */
+.btn-primary {
+  background-color: #f97316;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #ea580c;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: #27272a;
+  color: #ededed;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #3f3f46;
+}
+
+/* Empty state styling */
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: #71717a;
+}
+
+.empty-state-icon {
+  opacity: 0.5;
+  margin-bottom: 16px;
+}
+
+/* Progress bar styling */
+.progress-bar {
+  background-color: #27272a;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  background-color: #10b981;
+  transition: width 0.3s ease;
+}
+
+/* Drag and drop styles */
+.dragging {
+  opacity: 0.5;
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.drag-over {
+  background-color: rgba(59, 130, 246, 0.05);
+  border-color: #3b82f6;
+}
+
+/* Collapsible animation */
+.collapsible-content {
+  overflow: hidden;
+  transition: height 0.2s ease-out;
+}
+
+/* Inline edit mode */
+.inline-edit {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 2px 6px;
+  margin: -2px -6px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.inline-edit:hover {
+  border-color: #3f3f46;
+}
+
+.inline-edit:focus {
+  border-color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+/* Tooltip styling */
+.tooltip {
+  background-color: #121212;
+  border: 1px solid #27272a;
+  color: #ededed;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 50;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .app-sidebar.open {
+    transform: translateX(0);
+  }
+}
