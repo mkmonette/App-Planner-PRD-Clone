@@ -1,0 +1,146 @@
+{
+  "project_name": "App Planner & PRD Manager",
+  "design_identity": {
+    "persona": "E1 - The Anti-AI Designer",
+    "core_philosophy": "Fusion over Imitation. Functionality as Art. Structural Void.",
+    "emotional_tone": "Tactical, Lucid, Flow-State, Precision",
+    "theme_strategy": "Structural Void (Dark Mode Only)"
+  },
+  "typography": {
+    "fonts": {
+      "headings": {
+        "family": "Space Grotesk, sans-serif",
+        "weights": ["600", "700"],
+        "tracking": "-0.02em",
+        "usage": "Section headers, App titles, Modal titles"
+      },
+      "body": {
+        "family": "Inter, sans-serif",
+        "weights": ["400", "500"],
+        "tracking": "0em",
+        "usage": "General UI text, inputs, descriptions"
+      },
+      "mono": {
+        "family": "JetBrains Mono, monospace",
+        "weights": ["400"],
+        "usage": "IDs, metadata, technical notes"
+      }
+    },
+    "scale": {
+      "h1": "text-3xl font-bold tracking-tight",
+      "h2": "text-xl font-semibold tracking-tight",
+      "h3": "text-lg font-medium",
+      "body": "text-sm leading-relaxed",
+      "small": "text-xs text-muted-foreground"
+    }
+  },
+  "colors": {
+    "palette": {
+      "background": {
+        "app_bg": "#09090b", 
+        "sidebar": "#020202",
+        "header": "#000000",
+        "card": "#121212",
+        "overlay": "rgba(0,0,0,0.8)"
+      },
+      "border": {
+        "subtle": "#27272a",
+        "default": "#3f3f46",
+        "active": "#52525b"
+      },
+      "accents": {
+        "primary_orange": "#f97316",
+        "primary_orange_dim": "rgba(249, 115, 22, 0.1)",
+        "secondary_blue": "#3b82f6",
+        "secondary_blue_dim": "rgba(59, 130, 246, 0.1)",
+        "success": "#10b981",
+        "danger": "#ef4444",
+        "warning": "#f59e0b"
+      },
+      "text": {
+        "primary": "#ededed",
+        "secondary": "#a1a1aa",
+        "muted": "#52525b",
+        "inverse": "#000000"
+      }
+    },
+    "usage_rules": {
+      "selection": "Use Blue (#3b82f6) for selection and focus states.",
+      "action": "Use Orange (#f97316) for primary actions (Add Block, Save) and High Priority highlights.",
+      "gradients": "FORBIDDEN. Use flat colors or subtle noise textures only.",
+      "glass": "Use strictly for floating panels (toasts, command palette). backdrop-blur-md bg-black/70 border border-white/10."
+    }
+  },
+  "spacing_and_layout": {
+    "base_scale": 4,
+    "containers": {
+      "sidebar_width": "280px",
+      "main_padding": "p-8",
+      "block_gap": "gap-3"
+    },
+    "radius": {
+      "default": "rounded-md",
+      "small": "rounded-sm",
+      "large": "rounded-lg"
+    },
+    "grid_system": {
+      "dashboard": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
+      "app_workspace": "flex h-screen overflow-hidden",
+      "tree_row": "flex items-center gap-2 py-1 px-2 group"
+    }
+  },
+  "components": {
+    "blocks": {
+      "visual_style": "Minimalist Card. No shadow by default. 1px border (#27272a).",
+      "hover_state": "bg-white/5 border-white/10 transition-colors duration-200",
+      "active_state": "border-l-2 border-orange-500 bg-orange-500/5",
+      "drag_handle": "Visible on hover. Cursor-grab. Icon: GripVertical."
+    },
+    "buttons": {
+      "primary": "bg-orange-600 hover:bg-orange-500 text-white shadow-sm font-medium",
+      "secondary": "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+      "ghost": "hover:bg-accent hover:text-accent-foreground",
+      "outline": "border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+    },
+    "inputs": {
+      "style": "bg-transparent border-transparent hover:border-border focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-sm px-2 py-1 transition-all"
+    },
+    "status_badges": {
+      "style": "text-[10px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded-sm border",
+      "variants": {
+        "todo": "border-zinc-700 text-zinc-500 bg-zinc-900",
+        "inprogress": "border-blue-900 text-blue-400 bg-blue-950",
+        "done": "border-green-900 text-green-400 bg-green-950",
+        "blocked": "border-red-900 text-red-400 bg-red-950"
+      }
+    }
+  },
+  "visual_enhancers": {
+    "tracing_beam": "Use for the active path in the tree view. A subtle vertical line that connects the hierarchy.",
+    "noise_texture": "Apply a subtle SVG noise overlay to the sidebar background for texture.",
+    "depth": "Use layered z-index for floating menus. No heavy drop shadows. Use 1px borders for separation.",
+    "icons": "Lucide-react. Stroke width: 1.5px (Thin/Technical feel). Size: 16px for UI, 20px for headers."
+  },
+  "motion": {
+    "transitions": "transition-all duration-200 ease-out",
+    "list_reorder": "Use framer-motion 'layout' prop for smooth reordering.",
+    "hover_lift": "translate-y-[-1px] for clickable cards."
+  },
+  "accessibility": {
+    "focus_ring": "ring-2 ring-blue-500 ring-offset-2 ring-offset-black",
+    "contrast": "Ensure text-muted (#a1a1aa) is readable on dark bg. Minimum 4.5:1 for main text."
+  },
+  "instructions_to_main_agent": {
+    "1": "Implement the 'Structural Void' theme immediately. Override default Shadcn zinc colors with the custom palette in globals.css.",
+    "2": "Create a 'Block' component that is recursive. It must handle its own children rendering.",
+    "3": "Use 'react-beautiful-dnd' or '@hello-pangea/dnd' for drag and drop (check package.json or install). If not available, simple HTML5 DnD is acceptable but less polished.",
+    "4": "Ensure the Tree View allows collapsing/expanding. State must be preserved.",
+    "5": "The 'Editor' is inline. Clicking a block title turns it into an input. No separate 'Edit Page' unless it's for deep details.",
+    "6": "Use LocalStorage for all data persistence. Create a 'StorageManager' utility.",
+    "7": "Use `data-testid` on EVERYTHING interactive."
+  },
+  "universal_guidelines": {
+    "do_not_use": ["Gradients for text", "Rounded-full buttons (use rounded-md)", "Saturated backgrounds"],
+    "must_do": ["Micro-interactions on hover", "Empty states with helpful text", "Keyboard navigation support"]
+  }
+}
